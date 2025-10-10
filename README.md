@@ -19,14 +19,21 @@
 ## 🛠 Estrutura de pastas
 
 📁 Raiz <br>
-├── 📁 documentos <br>
-│ ├── 📁 Entrega 1<br>
-│ │
-│ ├── 📁 Entrega 2<br>
-│ |
-│ ├── 📁 imagens<br>
-│ ├── 📁 src<br>
-│ |
+📁 documentos <br>
+📁 Entrega 1<br>
+└── Bigdata<br>
+└── Cybersec<br>
+└── Empreendedorismo<br>
+└── Gestão de projetos<br>
+└── Ia<br>
+📁 Entrega 2<br>
+└── Bigdata<br>
+└── Cybersec<br>
+└── Empreendedorismo<br>
+└── Gestão de projetos<br>
+└── Ia<br>
+📁 imagens<br>
+📁 src<br>
 └── 📄 readme.md<br>
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
