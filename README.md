@@ -12,6 +12,10 @@
 
 ## 🧾 Descrição:
 
+<p align="center">
+<img src = "https://github.com/2025-2-NADS4/Projeto5/blob/main/imagens/logo%20ilonnac.png" width="900"/>
+<p align="center">
+  
 ## 💡 Objetivo:
 
 ## ⚙️ Funcionalidades:
