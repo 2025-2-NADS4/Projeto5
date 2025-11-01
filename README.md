@@ -94,3 +94,6 @@ Em andamento - Projeto finalizado com êxito — todas as etapas concluídas e e
 ## 🎓 Referências
 
 Aqui estão as referências usadas no projeto.
+<br>https://www.cannoli.food/
+<br>https://sendpulse.com/br/blog/modelos-de-dashboard
+<br>
