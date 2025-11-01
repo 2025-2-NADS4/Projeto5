@@ -55,7 +55,41 @@ Há também 3 pastas que seguem da seguinte forma:
 ## 🗃 Histórico de lançamentos
 A cada atualização os detalhes devem ser lançados aqui.
 
-* 0.1 -
+0.1.1 – 20/09/2025
+Gestão de Projetos: Project Charter finalizado com sucesso.
+
+0.2.2 – 21/09/2025
+Gestão de Projetos: Estrutura Analítica do Projeto (WBS) concluída e validada.
+
+0.3.3 – 23/09/2025
+Big Data: Arquivo do Colab com os scripts e documentação (PDF/Word) entregue.
+
+0.4.4 – 24/09/2025
+Empreendedorismo: Documento do projeto entregue, com análise de mercado e oportunidade da solução.
+
+0.5.5 – 25/09/2025
+Inteligência Artificial: Algoritmo de IA aplicado ao Projeto Integrador (PI) concluído.
+
+0.6.6 – 26/09/2025
+Cibersegurança: Documento com levantamento de riscos, vulnerabilidades e ameaças finalizado.
+
+0.7.7 – 08/10/2025
+Gestão de Projetos: Rede PERT-CPM elaborada e revisada.
+
+0.8.8 – 09/10/2025
+Big Data: Atualização do Colab com novos scripts concluída.
+
+0.9.9 – 09/10/2025
+Empreendedorismo: Documento do projeto atualizado com a persona do cliente.
+
+0.10.10 – 09/10/2025
+Inteligência Artificial: Modelo de Machine Learning aplicado com sucesso no PI.
+
+0.11.11 – 10/10/2025
+Cibersegurança: Tabela Riscos x GUT concluída com todas as pontuações de criticidade.
+
+0.13.13 – 10/10/2025
+Em andamento - Projeto finalizado com êxito — todas as etapas concluídas e entregues dentro do prazo.
 
 ## 🎓 Referências
 
