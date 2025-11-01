@@ -91,6 +91,8 @@ Cibersegurança: Tabela Riscos x GUT concluída com todas as pontuações de cri
 0.13.13 – 10/10/2025
 Em andamento - Projeto finalizado com êxito — todas as etapas concluídas e entregues dentro do prazo.
 
+## Licenças
+<a href="https://github.com/2025-2-NADS4/Projeto5/tree/main"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ilonnac</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> © 2025 por </font></font><a href="https://github.com/raissaES"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Ana, Arthur, Deborah e Raissa</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> está licenciado sob </font></font><a href="https://creativecommons.org/licenses/by/4.0/"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">CC BY 4.0</font></font></a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 ## 🎓 Referências
 
 Aqui estão as referências usadas no projeto.
