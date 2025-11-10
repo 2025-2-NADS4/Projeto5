@@ -6,9 +6,9 @@
 
 # Projeto: illonac 
 ## Grupo 5
-## Integrantes: <a href="https://br.linkedin.com/in/ana-clara-torres-musso-?trk=public_post_follow-view-profile">Ana Clara Musso</a>, <a href="https://www.linkedin.com/in/arthur-alves-3341a8226/">Arthur Alves</a>, <a href="https://br.linkedin.com/in/deborah-colicchio?trk=people-guest_people_search-card">Deborah Colicchio</a>, <a href="https://www.linkedin.com/in/raissa-elias-873178232/">Raissa Elias</a>.
+## Integrantes: <a href="https://br.linkedin.com/in/ana-clara-torres-musso-?trk=public_post_follow-view-profile">Ana Clara Musso</a>, <a href="https://www.linkedin.com/in/arthur-alves-3341a8226/">Arthur Alves</a>, <a href="https://br.linkedin.com/in/deborah-colicchio?trk=people-guest_people_search-card">Deborah Colicchio</a> <a href="https://www.linkedin.com/in/raissa-elias-873178232/">e Raissa Elias</a>.
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins</a>, <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araujo</a>, <a href="https://www.linkedin.com/in/eduardo-savino/">Eduardo Savino</a>, <a href="https://www.linkedin.com/in/edsonbarbero/">Edson Barbero</a>, <a href="https://www.linkedin.com/in/lucymari/">Lucy Mari</a>
+## Professores Orientadores: <a href="https://www.linkedin.com/in/aimarlopes/">Aimar Martins</a>, <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araujo</a>, <a href="https://www.linkedin.com/in/eduardo-savino/">Eduardo Savino</a>, <a href="https://www.linkedin.com/in/edsonbarbero/">Edson Barbero</a> <a href="https://www.linkedin.com/in/lucymari/">e Lucy Mari</a>
 
 <p align="center">
 <img src = "https://github.com/2025-2-NADS4/Projeto5/blob/main/imagens/logo%20ilonnac.png" width="900"/>
