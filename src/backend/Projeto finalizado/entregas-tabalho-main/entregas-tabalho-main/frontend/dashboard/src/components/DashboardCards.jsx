@@ -1,9 +1,42 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 export default function DashboardCards() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get("http://127.0.0.1:5000/dashboard/metrics", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => setData(res.data))
+      .catch((err) => console.error("Erro ao buscar métricas:", err));
+  }, []);
+
+  if (!data) return <p>Carregando métricas...</p>;
+
   const cards = [
-    { title: "Clientes Ativos", value: "1.248", color: "from-pink-500 to-orange-400" },
-    { title: "Pedidos Hoje", value: "327", color: "from-orange-400 to-pink-400" },
-    { title: "Taxa de Conversão", value: "74%", color: "from-pink-400 to-orange-500" },
-    { title: "Faturamento", value: "R$ 12.480", color: "from-orange-500 to-pink-500" },
+    {
+      title: "Campanhas Totais",
+      value: data.total_campaigns,
+      color: "from-pink-500 to-orange-400",
+    },
+    {
+      title: "Taxa Média de Abertura",
+      value: `${data.avg_open}%`,
+      color: "from-orange-400 to-pink-400",
+    },
+    {
+      title: "Taxa Média de Cliques",
+      value: `${data.avg_click}%`,
+      color: "from-pink-400 to-orange-500",
+    },
+    {
+      title: "Melhor Dia (Open Rate)",
+      value: Object.entries(data.by_day).sort((a,b) => b[1]-a[1])[0][0],
+      color: "from-orange-500 to-pink-500",
+    },
   ];
 
   return (
