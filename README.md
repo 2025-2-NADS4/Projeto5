@@ -32,16 +32,16 @@
 📁 documentos <br>
 📁 Entrega 1<br>
 └── Bigdata<br>
-└── Cybersec<br>
+└── Cibersegurança<br>
 └── Empreendedorismo<br>
 └── Gestão de projetos<br>
 └── Ia<br>
 📁 Entrega 2<br>
 └── Bigdata<br>
-└── Cybersec<br>
+└── Cibersegurança<br>
 └── Empreendedorismo<br>
 └── Gestão de projetos<br>
-└── Ia<br>
+└── IA e ML<br>
 📁 imagens<br>
 📁 src<br>
 └── 📄 readme.md<br>
