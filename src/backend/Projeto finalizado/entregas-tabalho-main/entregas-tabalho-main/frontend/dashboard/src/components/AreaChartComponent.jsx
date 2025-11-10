@@ -9,20 +9,20 @@ import {
 } from "recharts";
 
 const data = [
-  { name: "Jan", vendas: 400 },
-  { name: "Fev", vendas: 460 },
-  { name: "Mar", vendas: 520 },
-  { name: "Abr", vendas: 610 },
-  { name: "Mai", vendas: 750 },
-  { name: "Jun", vendas: 820 },
-  { name: "Jul", vendas: 910 },
+  { name: "Segunda", vendas: 124 },
+  { name: "Terça", vendas: 107 },
+  { name: "Quarta", vendas: 118 },
+  { name: "Quinta", vendas: 107 },
+  { name: "Sexta", vendas: 107 },
+  { name: "Sábado", vendas: 125 },
+  { name: "Domingo", vendas: 102 },
 ];
 
 export default function AreaChartComponent() {
   return (
     <div className="bg-white rounded-xl shadow-md p-6 mt-6">
       <h3 className="text-xl font-semibold text-gray-700 mb-4">
-        Tendência de Vendas 
+        Tendência de Vendas por dia da Semana 
       </h3>
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data} margin={{ top: 10, right: 20, left: 0, bottom: 5 }}>

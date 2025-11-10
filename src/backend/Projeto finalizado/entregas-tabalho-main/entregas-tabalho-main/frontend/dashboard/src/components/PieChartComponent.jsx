@@ -1,10 +1,10 @@
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const data = [
-  { name: "Bebidas", value: 35 },
-  { name: "Lanches", value: 25 },
-  { name: "Doces", value: 20 },
-  { name: "Outros", value: 20 },
+  { name: "Masculino", value: 23.4 },
+  { name: "Feminino", value: 24.4 },
+  { name: "Nulo", value: 25.9 },
+  { name: "Outros", value: 26.3 },
 ];
 
 const COLORS = ["#ec4899", "#f97316", "#f59e0b", "#fb7185"];
@@ -13,7 +13,7 @@ export default function PieChartComponent() {
   return (
     <div className="bg-white rounded-xl shadow-md p-6 mt-6">
       <h3 className="text-xl font-semibold text-gray-700 mb-4">
-        Vendas por Categoria 🍩
+        Porcentagem de clientes por Gênero
       </h3>
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
