@@ -1,20 +1,30 @@
+import { useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
-
-const data = [
-  { name: "Masculino", value: 23.4 },
-  { name: "Feminino", value: 24.4 },
-  { name: "Nulo", value: 25.9 },
-  { name: "Outros", value: 26.3 },
-];
 
 const COLORS = ["#ec4899", "#f97316", "#f59e0b", "#fb7185"];
 
 export default function PieChartComponent() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Substitua a URL pela sua rota do backend
+    fetch("http://localhost:5000/dashboard/clientes-genero")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao buscar dados de gênero");
+        }
+        return response.json();
+      })
+      .then((dados) => setData(dados))
+      .catch((error) => console.error("Erro na requisição:", error));
+  }, []);
+
   return (
     <div className="bg-white rounded-xl shadow-md p-6 mt-6">
       <h3 className="text-xl font-semibold text-gray-700 mb-4">
         Porcentagem de clientes por Gênero
       </h3>
+
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie
@@ -30,7 +40,10 @@ export default function PieChartComponent() {
             }
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
             ))}
           </Pie>
           <Tooltip />
