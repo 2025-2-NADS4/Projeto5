@@ -1,12 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
-export default function Register({ onRegistered, goToLogin }) {
+export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("user");
   const [msg, setMsg] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -18,9 +20,7 @@ export default function Register({ onRegistered, goToLogin }) {
       });
       setMsg(res.data.msg);
       setError("");
-      setTimeout(() => {
-        onRegistered(); // volta pra tela de login
-      }, 1500);
+      setTimeout(() => navigate("/login"), 1500);
     } catch (err) {
       setMsg("");
       setError(err.response?.data?.msg || "Erro ao registrar");
@@ -49,7 +49,6 @@ export default function Register({ onRegistered, goToLogin }) {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full p-2 border rounded mb-4"
         />
-
         <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
@@ -71,12 +70,9 @@ export default function Register({ onRegistered, goToLogin }) {
 
         <p className="text-center mt-4 text-gray-600">
           Já tem conta?{" "}
-          <span
-            onClick={goToLogin}
-            className="text-orange-500 cursor-pointer hover:underline"
-          >
+          <Link to="/login" className="text-orange-500 hover:underline">
             Faça login
-          </span>
+          </Link>
         </p>
       </form>
     </div>

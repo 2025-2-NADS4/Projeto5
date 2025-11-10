@@ -1,10 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
-export default function Login({ onLogin, goToRegister }) {
+export default function Login({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +18,7 @@ export default function Login({ onLogin, goToRegister }) {
       const token = res.data.access_token;
       localStorage.setItem("token", token);
       onLogin(token);
+      navigate("/dashboard");
     } catch (err) {
       setError("Usuário ou senha inválidos");
     }
@@ -52,12 +55,12 @@ export default function Login({ onLogin, goToRegister }) {
 
         <p className="text-center mt-4 text-gray-600">
           Não tem conta?{" "}
-          <span
-            onClick={goToRegister}
-            className="text-orange-500 cursor-pointer hover:underline"
+          <Link
+            to="/register"
+            className="text-orange-500 hover:underline"
           >
             Cadastre-se
-          </span>
+          </Link>
         </p>
       </form>
     </div>
