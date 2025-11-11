@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode"; // ✅ import correto (sem chaves)
+import OverviewPage from "./pages/Overview"
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
@@ -74,6 +75,7 @@ function App() {
             )
           }
         />
+        <Route path="/overview" element={<OverviewPage />} />
 
         {/* Redireciona qualquer rota desconhecida */}
         <Route
