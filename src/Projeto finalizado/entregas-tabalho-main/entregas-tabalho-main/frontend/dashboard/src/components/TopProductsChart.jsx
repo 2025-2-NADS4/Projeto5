@@ -9,24 +9,41 @@ import {
   ResponsiveContainer,
   Cell,
 } from "recharts";
+import api from "../config/axios"; // ✅ Ajuste o caminho conforme sua estrutura
 
 const COLORS = ["#ec4899", "#f97316", "#f59e0b", "#fb7185", "#fdba74"];
 
 export default function TopProductsChart() {
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Substitua pela URL real do seu backend:
-    fetch("http://localhost:5000/dashboard/top-engines")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erro ao buscar dados do backend");
-        }
-        return response.json();
-      })
-      .then((dados) => setData(dados))
-      .catch((error) => console.error("Erro na requisição:", error));
+    const fetchData = async () => {
+      try {
+        const response = await api.get("/dashboard/top-engines");
+        setData(response.data);
+      } catch (error) {
+        console.error("Erro na requisição:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="bg-white rounded-xl shadow-md p-6 mt-6">
+        <h3 className="text-xl font-semibold text-gray-700 mb-4">
+          Engines mais usadas pelos clientes
+        </h3>
+        <div className="flex items-center justify-center h-[300px]">
+          <p className="text-gray-400">Carregando...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white rounded-xl shadow-md p-6 mt-6">
@@ -44,7 +61,7 @@ export default function TopProductsChart() {
           <XAxis type="number" />
           <YAxis dataKey="name" type="category" />
           <Tooltip />
-          <Bar dataKey="vendas" radius={[6, 6, 0, 0]}>
+          <Bar dataKey="clientes" radius={[6, 6, 0, 0]}>
             {data.map((entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}

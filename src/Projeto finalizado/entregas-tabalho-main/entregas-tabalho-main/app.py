@@ -1,12 +1,14 @@
 import json
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import (
+    JWTManager, create_access_token, jwt_required, get_jwt_identity
+)
 
 from models import db
 from models.user import User
 from routes.product import product_bp
-from routes.dashboard_routes import dashboard_bp  # 👈 Import do dashboard
+from routes.dashboard_routes import dashboard_bp
 from config import Config
 
 
@@ -17,12 +19,23 @@ def create_app():
     # Inicializa o banco
     db.init_app(app)
 
-    CORS(app)
-    JWTManager(app)
+    # ✅ Configuração CORS (somente seu front-end React)
+    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
 
-    # Registra Blueprints
+    # ✅ JWT
+    jwt = JWTManager(app)
+
+    @jwt.unauthorized_loader
+    def unauthorized_callback(err_msg):
+        return jsonify({"msg": "Token ausente ou inválido"}), 401
+
+    @jwt.invalid_token_loader
+    def invalid_token_callback(err_msg):
+        return jsonify({"msg": "Token inválido"}), 401
+
+    # ✅ Blueprints
     app.register_blueprint(product_bp)
-    app.register_blueprint(dashboard_bp)  # 👈 Registro do blueprint do dashboard
+    app.register_blueprint(dashboard_bp)
 
     # Rota raiz (teste rápido)
     @app.route('/')
@@ -55,15 +68,17 @@ def create_app():
         if not user or not user.check_password(data['password']):
             return jsonify({"msg": "Usuário ou senha incorretos"}), 401
 
-        user_identity = json.dumps({"username": user.username, "role": user.role})
+        # ✅ Passa o objeto direto, sem json.dumps()
+        user_identity = {"username": user.username, "role": user.role}
         access_token = create_access_token(identity=user_identity)
+
         return jsonify(access_token=access_token), 200
 
     # Rota protegida para testes
     @app.route('/protected', methods=['GET'])
     @jwt_required()
     def protected():
-        current_user = json.loads(get_jwt_identity())
+        current_user = get_jwt_identity()
         return jsonify(logged_in_as=current_user), 200
 
     # Cria todas as tabelas no banco
@@ -73,9 +88,8 @@ def create_app():
     return app
 
 
-# Inicializa o app Flask
-app = create_app()
-
+# ✅ Inicializa e roda o app Flask
 if __name__ == '__main__':
+    app = create_app()
+    print("🚀 Servidor Flask rodando em http://127.0.0.1:5000")
     app.run(debug=True)
-

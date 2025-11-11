@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 //import Sidebar from "../components/Sidebar";
-import DashboardCards from "../components/DashboardCards";
-import PerformanceChart from "../components/PerformanceChart";
+//import DashboardCards from "../components/DashboardCards";
+//import PerformanceChart from "../components/PerformanceChart";
 import PieChartComponent from "../components/PieChartComponent";
 import BarChartComponent from "../components/BarChartComponent";
 import AreaChartComponent from "../components/AreaChartComponent";
@@ -18,9 +18,8 @@ export default function Dashboard({ username, onLogout }) {
             Bem-vindo(a), {username || "usuário"}! 🌸
           </h2>
 
-           <DashboardCards /> 
-          <PerformanceChart />
-
+           {/*<DashboardCards /> */}
+          {/*<PerformanceChart /> */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <PieChartComponent />
             <BarChartComponent />
