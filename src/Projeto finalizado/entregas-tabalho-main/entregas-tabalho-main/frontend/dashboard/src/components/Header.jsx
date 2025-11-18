@@ -1,6 +1,6 @@
 export default function Header({ onLogout }) {
   const handleProfileClick = () => {
-    alert("🔎 Em breve: página de perfil da Ana");
+    alert("🔎 Em breve: página de perfil de usuário");
   };
 
   const handleLogoutClick = () => {

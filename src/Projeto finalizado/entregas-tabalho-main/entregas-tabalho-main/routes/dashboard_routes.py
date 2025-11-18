@@ -142,6 +142,9 @@ def pedidos_mensais():
         {"name": "Mai", "pedidos": 33},
         {"name": "Jun", "pedidos": 45},
         {"name": "Jul", "pedidos": 40},
+        {"name": "Ago", "pedidos": 36},
+        {"name": "Set", "pedidos": 40},
+        {"name": "Out", "pedidos": 50},
     ]
     return jsonify(data)
 
