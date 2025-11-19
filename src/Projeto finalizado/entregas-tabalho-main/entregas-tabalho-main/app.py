@@ -11,7 +11,7 @@ from routes.product import product_bp
 from routes.dashboard_routes import dashboard_bp
 from routes.settings_routes import settings_bp
 from config import Config
-
+from your_app import create_app
 
 def create_app():
     app = Flask(__name__)
