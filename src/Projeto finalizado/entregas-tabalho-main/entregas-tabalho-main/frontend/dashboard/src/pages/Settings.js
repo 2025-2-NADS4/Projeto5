@@ -1,13 +1,44 @@
+import { useState } from "react";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
-//import DashboardCards from "../components/DashboardCards";
-//import PerformanceChart from "../components/PerformanceChart";
-import PieChartComponent from "../components/PieChartComponent";
-import BarChartComponent from "../components/BarChartComponent";
-import AreaChartComponent from "../components/AreaChartComponent";
-import TopProductsChart from "../components/TopProductsChart";
 
 export default function Settings() {
+
+  // Estados dos Inputs
+  const [nomeEmpresa, setNomeEmpresa] = useState("");
+  const [cnpj, setCnpj] = useState("");
+  const [email, setEmail] = useState("");
+  const [telefone, setTelefone] = useState("");
+
+  // Função para enviar dados para a API
+  async function salvarAlteracoes() {
+    const dados = {
+      nomeEmpresa,
+      cnpj,
+      email,
+      telefone,
+    };
+
+    try {
+      const resposta = await fetch("http://127.0.0.1:5000/api/empresa", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dados),
+      });
+
+      if (!resposta.ok) {
+        throw new Error("Erro ao salvar os dados");
+      }
+
+      alert("Dados salvos com sucesso!");
+    } catch (erro) {
+      console.error(erro);
+      alert("Erro ao salvar. Tente novamente.");
+    }
+  }
+
   return (
     <div className="h-screen flex">
 
@@ -27,39 +58,61 @@ export default function Settings() {
             Configurações do Sistema ⚙️
           </h1>
 
-          {/* Seção 1 — Dados da Empresa */}
+          {/* --- Dados da Empresa --- */}
           <Card title="Dados da Empresa">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              <Input label="Nome da Empresa" placeholder="Ilonnac Delivery" />
-              <Input label="CNPJ" placeholder="00.000.000/0000-00" />
+              <Input
+                label="Nome da Empresa"
+                placeholder="Ilonnac Delivery"
+                value={nomeEmpresa}
+                onChange={setNomeEmpresa}
+              />
 
-              <Input label="E-mail de Contato" placeholder="contato@empresa.com" />
-              <Input label="Telefone" placeholder="(11) 99999-0000" />
+              <Input
+                label="CNPJ"
+                placeholder="00.000.000/0000-00"
+                value={cnpj}
+                onChange={setCnpj}
+              />
+
+              <Input
+                label="E-mail de Contato"
+                placeholder="contato@empresa.com"
+                value={email}
+                onChange={setEmail}
+              />
+
+              <Input
+                label="Telefone"
+                placeholder="(11) 99999-0000"
+                value={telefone}
+                onChange={setTelefone}
+              />
 
             </div>
 
-            <button className="mt-6 px-4 py-2 bg-pink-500 text-white rounded-xl hover:bg-pink-600">
+            <button
+              onClick={salvarAlteracoes}
+              className="mt-6 px-4 py-2 bg-pink-500 text-white rounded-xl hover:bg-pink-600"
+            >
               Salvar alterações
             </button>
           </Card>
 
-          {/* Seção 2 — Preferências do Sistema */}
+          {/* --- Preferências --- */}
           <Card title="Preferências do Sistema">
             <div className="flex flex-col gap-4">
-
-              {/*<Toggle label="Ativar modo escuro" />*/}
               <Toggle label="Enviar alertas por e-mail" />
               <Toggle label="Backup automático semanal" />
-
             </div>
           </Card>
 
-          {/* Seção 3 — Segurança */}
+          {/* --- Segurança --- */}
           <Card title="Segurança">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Input label="Nova Senha" type="password" />
-              <Input label="Confirmar Nova Senha" type="password" />
+              <Input label="Nova Senha" type="password" value="" onChange={() => {}} />
+              <Input label="Confirmar Nova Senha" type="password" value="" onChange={() => {}} />
             </div>
 
             <button className="mt-6 px-4 py-2 bg-orange-500 text-white rounded-xl hover:bg-orange-600">
@@ -73,6 +126,7 @@ export default function Settings() {
         <footer className="max-w-5xl mx-auto px-6 mt-12 text-xs text-gray-400">
           Ilonnac Dashboard • Configurações • © {new Date().getFullYear()}
         </footer>
+
       </div>
     </div>
   );
@@ -89,13 +143,15 @@ function Card({ title, children }) {
   );
 }
 
-function Input({ label, placeholder, type = "text" }) {
+function Input({ label, placeholder, type = "text", value, onChange }) {
   return (
     <div className="flex flex-col">
       <label className="text-sm text-gray-600 mb-1">{label}</label>
       <input
         type={type}
         placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         className="p-3 border rounded-xl focus:ring-2 ring-pink-300 outline-none"
       />
     </div>

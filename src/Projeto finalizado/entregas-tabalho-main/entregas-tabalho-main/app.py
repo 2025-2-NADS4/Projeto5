@@ -9,6 +9,7 @@ from models import db
 from models.user import User
 from routes.product import product_bp
 from routes.dashboard_routes import dashboard_bp
+from routes.settings_routes import settings_bp
 from config import Config
 
 
@@ -36,6 +37,7 @@ def create_app():
     # ✅ Blueprints
     app.register_blueprint(product_bp)
     app.register_blueprint(dashboard_bp)
+    app.register_blueprint(settings_bp)
 
     # Rota raiz (teste rápido)
     @app.route('/')

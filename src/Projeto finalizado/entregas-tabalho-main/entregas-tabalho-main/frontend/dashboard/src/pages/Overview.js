@@ -4,7 +4,6 @@ import Sidebar from "../components/Sidebar";
 import PieChartComponent from "../components/PieChartComponent";
 import BarChartComponent from "../components/BarChartComponent";
 import AreaChartComponent from "../components/AreaChartComponent";
-import TopProductsChart from "../components/TopProductsChart";
 
 export default function OverviewPage() {
 
@@ -91,36 +90,10 @@ export default function OverviewPage() {
                   </div>
                 </div>
               </Card>
-
-              <Card title="Atividades Recentes">
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li>📦 Pedido #1253 — Novo pedido recebido (2h atrás)</li>
-                  <li>👤 Novo usuário: maria.silva@email.com (1d)</li>
-                  <li>⚠️ Alerta: Queda de 12% em pedidos nas segundas-feiras</li>
-                </ul>
-              </Card>
             </div>
           </section>
 
-          {/* Insights */}
-          <section className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <Card title="Insights rápidos" className="col-span-2">
-              <ul className="list-disc list-inside text-sm text-gray-600 space-y-2">
-                <li>Promoção nas segundas pode aumentar média diária em ~12%.</li>
-                <li>CannoliEngine cresceu 10% — verificar capacidade.</li>
-                <li>Ticket médio caiu 1% — revisar categorias com churn.</li>
-              </ul>
-            </Card>
-
-            <Card title="Acesso rápido">
-              <div className="flex flex-col gap-2">
-                <a className="text-sm text-pink-600 hover:underline">Ver Vendas</a>
-                <a className="text-sm text-pink-600 hover:underline">Ver Clientes</a>
-                <a className="text-sm text-pink-600 hover:underline">Relatórios</a>
-                <a className="text-sm text-pink-600 hover:underline">Configurações</a>
-              </div>
-            </Card>
-          </section>
+          
         </main>
 
         <footer className="max-w-7xl mx-auto px-6 mt-10 text-xs text-gray-400">
