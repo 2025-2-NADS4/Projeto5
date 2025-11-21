@@ -14,7 +14,13 @@
 <img src = "https://github.com/2025-2-NADS4/Projeto5/blob/main/imagens/logo%20ilonnac.png" width="900"/>
 <p align="center">
   
-## 💡 Objetivo: 
+## 💡 Descrição: 
+
+A Ilonnac é uma iniciativa dedicada à criação de soluções digitais simples, eficientes e acessíveis, voltadas para empresas que precisam visualizar, organizar e interpretar seus dados com clareza. Nosso foco é transformar informações brutas em insights visuais e acionáveis, ajudando organizações a tomarem decisões melhores e mais rápidas.
+
+Neste projeto, desenvolvemos um dashboard completo de visualização de dados para a Cannoli, permitindo acompanhar métricas de clientes, pedidos e campanhas com precisão. A plataforma foi construída com foco em desempenho, usabilidade e design limpo, garantindo que qualquer pessoa da equipe consiga navegar e extrair valor real das informações apresentadas.
+
+Para garantir estabilidade e escalabilidade, nossa arquitetura foi dividida em dois serviços independentes: o backend em Flask, hospedado no Render, responsável pela API e processamento de dados; e o frontend em React, hospedado na Vercel, garantindo carregamento rápido e experiência fluida em qualquer dispositivo. Essa combinação fortalece a confiabilidade do sistema e oferece uma base sólida para futuras expansões.
 
 ## Principais Funcionalidades
 
