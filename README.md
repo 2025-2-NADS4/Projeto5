@@ -64,6 +64,8 @@ Há também 3 pastas que seguem da seguinte forma:
 
 ## ⌨︎ Técnicas e Tecnologias utilizadas.
 - Dashboard em Python com SQLite e Backend Flask
+- Render para hospedagem da API, link: https://ilonnac-backend.onrender.com
+- Vercel para hospedagem do Front, link: https://projeto5-beta.vercel.app
 
 ## 🗃 Histórico de lançamentos
 A cada atualização os detalhes devem ser lançados aqui.
